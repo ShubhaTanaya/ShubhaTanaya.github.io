@@ -450,328 +450,247 @@
     </section>
 
     <!-- Fourth Section: Projects -->
+    <!--
+      Each project is an <article class="project-row">: media first, then info.
+      Rows alternate image-left / image-right automatically via CSS (nth-child),
+      and always stack image-first on mobile. To add a project, copy one article.
+      Image modifiers: .project-media--contain (diagrams / small images, no cropping)
+                       .project-media--placeholder (no image yet)
+    -->
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text teal">Projects</h3>
       <div class="container">
-        <div class="row">
+        <div class="project-list">
 
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Flying Hand aerial manipulator" src="/assets/img/flying_hand_image" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Flying Hand: Aerial Manipulator for Non Destructive Testing<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Capstone project in collaboration with AIR Lab
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
+          <!-- 01. Flying Hand -->
+          <article class="project-row">
+            <div class="project-media project-media--placeholder">
+              <!-- TODO: replace with a real Flying Hand photo/render, e.g. /assets/img/flying_hand.jpg -->
+              <img alt="AIR Lab logo" src="/assets/img/air_lab.jpg" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <span class="project-number">01</span>
+              <h4 class="project-title">Flying Hand: Aerial Manipulator for Non-Destructive Testing</h4>
+              <p class="project-subtitle">Fully actuated hexacopter with a robotic arm for autonomous NDT in hard-to-reach infrastructure</p>
+              <p class="project-meta">Capstone Project &middot; AIR Lab, Carnegie Mellon University</p>
+              <p class="project-summary">
+                Implemented GPS-denied autonomy with Isaac ROS cuVSLAM (Intel D456) integrated with PX4 and MAVROS,
+                running entirely onboard a Jetson Orin Nano for real-time pose estimation at flight speed. Currently
+                designing a multi-sensor state estimation pipeline that extends the PX4 EKF, validated in Isaac Sim
+                and Pegasus before hardware deployment.
+              </p>
+              <ul class="project-tags">
+                <li>Aerial Manipulation</li>
+                <li>Visual-Inertial SLAM</li>
+                <li>PX4 / MAVROS</li>
+                <li>Sensor Fusion</li>
+                <li>Jetson Orin Nano</li>
+                <li>Isaac Sim</li>
+              </ul>
+              <details class="project-details">
+                <summary>Read more</summary>
                 <ul>
                   <li>Developing an aerial manipulation platform (fully actuated hexacopter + robotic arm) for autonomous non-destructive testing (NDT) in hard-to-reach infrastructure environments.</li>
                   <li>Implemented GPS-denied autonomy using Isaac ROS cuVSLAM (visual-inertial SLAM with Intel D456) integrated with PX4 and MAVROS; deployed entirely onboard a Jetson Orin Nano for real-time pose estimation at flight speed.</li>
                   <li>Designing a multi-sensor state estimation pipeline (depth camera, IMU, optical flow) and extended the PX4 EKF for custom sensor fusion, validated in Isaac Sim and Pegasus before hardware deployment.</li>
                 </ul>
-                <div class="card-action">
-                  <a aria-label="Watch Flying Hand project video" href="flying_hand_link" target="_blank" data-position="top"
-                    data-tooltip="Watch Video"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-play"></i></a>
-                </div>
-              </div>
+              </details>
+              <!-- TODO: add a VIDEO button once the link exists:
+              <div class="project-links">
+                <a class="project-btn" href="VIDEO_URL" target="_blank" rel="noopener"><i class="fa fa-play"></i>Video</a>
+              </div> -->
             </div>
-          </div>
+          </article>
 
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="music streaming app" src="/assets/img/f1.jpg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">F1Tenth Autonomous Racing<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  End-to-End Autonomous Racing Stack Deployed on Embedded Vehicle Hardware | DRIVE Lab
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
+          <!-- 02. F1Tenth -->
+          <article class="project-row">
+            <div class="project-media">
+              <img alt="F1Tenth autonomous race car with Jetson Orin NX and LiDAR" src="/assets/img/f1.jpg" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <span class="project-number">02</span>
+              <h4 class="project-title">F1Tenth Autonomous Racing</h4>
+              <p class="project-subtitle">End-to-end autonomous racing stack deployed on embedded vehicle hardware</p>
+              <p class="project-meta">DRIVE Lab &middot; Carnegie Mellon University</p>
+              <p class="project-summary">
+                Delivered a high-speed autonomous racing demonstration at the Safety21 Consortium on a ROS2 stack
+                optimized for real-time performance on an NVIDIA Jetson Orin NX. LiDAR-based SLAM with a particle filter
+                reduces localization drift, while a dual-tier navigation layer pairs Reactive Follow-the-Gap obstacle
+                avoidance with Pure Pursuit trajectory tracking.
+              </p>
+              <ul class="project-tags">
+                <li>ROS2</li>
+                <li>Jetson Orin NX</li>
+                <li>LiDAR SLAM</li>
+                <li>Particle Filter</li>
+                <li>Pure Pursuit</li>
+                <li>Follow-the-Gap</li>
+              </ul>
+              <details class="project-details">
+                <summary>Read more</summary>
                 <ul>
-                  <!-- <li><b>Tools:</b> Django, HTML, CSS, Bootstrap, SQLite, AWS S3, Heroku</li> -->
                   <li>Delivered a high-speed autonomous racing demonstration at the Safety21 Consortium, optimizing ROS2 software stack for robust, real-time performance on NVIDIA Jetson Orin NX embedded hardware.</li>
                   <li>Reduced localization drift in dynamic, unstructured environments by integrating LiDAR-based SLAM with a Particle Filter, enabling high-frequency pose estimation and highly precise vehicle positioning under racing conditions.</li>
                   <li>Maximized racing efficiency and safety through a dual-tier navigation system, combining Reactive Follow-the-Gap for dynamic obstacle avoidance and Pure Pursuit for high-speed trajectory tracking and optimal path planning.</li>
-
-
                 </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project"
-                    href="https://github.com/ShubhaTanaya" target="_blank"
-                    data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
+              </details>
+              <div class="project-links">
+                <a class="project-btn" href="https://github.com/ShubhaTanaya" target="_blank" rel="noopener"><i class="fa fa-github"></i>GitHub</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="quiz app" src="/assets/img/btp.jpg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">UGV-UAV Collaboration System<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Multi-Robot Autonomous System for Exploratory Mapping and Autonomous Navigation | Btech Capstone Project
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
+          <!-- 03. UGV-UAV Collaboration -->
+          <article class="project-row">
+            <div class="project-media project-media--contain">
+              <img alt="Gazebo simulation of a UAV tracking a ground robot" src="/assets/img/btp.jpg" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <span class="project-number">03</span>
+              <h4 class="project-title">UGV-UAV Collaboration System</h4>
+              <p class="project-subtitle">Multi-robot autonomous system for exploratory mapping and navigation</p>
+              <p class="project-meta">B.Tech Capstone &middot; Modular and Intelligent Robotics Lab, IIT Ropar &middot; Aug 2024 &ndash; May 2025</p>
+              <p class="project-summary">
+                Built digital twins of a heterogeneous UGV&ndash;UAV team in ROS2 Humble and PX4/Gazebo, synchronized over
+                Micro XRCE-DDS for multi-agent coordination. The navigation stack combines Cartographer SLAM and Nav2 on the
+                ground robot with PID waypoint following for UAV precision landing, validated hardware-in-the-loop on a
+                TurtleBot3 and Holybro X500 V2.
+              </p>
+              <ul class="project-tags">
+                <li>Multi-Robot Systems</li>
+                <li>ROS2 Humble</li>
+                <li>PX4 / Gazebo</li>
+                <li>Cartographer SLAM</li>
+                <li>Nav2</li>
+                <li>Sensor Fusion</li>
+              </ul>
+              <details class="project-details">
+                <summary>Read more</summary>
                 <ul>
                   <li>Developed high-fidelity Digital Twins for heterogeneous robots using ROS2 Humble and PX4/Gazebo, synchronizing UGV/UAV dynamics via Micro XRCE-DDS to streamline multi-agent coordination.</li>
                   <li>Designed an autonomous navigation stack integrating Cartographer SLAM for UGV mapping and Nav2 Planner for dynamic obstacle avoidance, alongside PID-based waypoint following for UAV precision landing.</li>
                   <li>Executed hardware-in-the-loop (HIL) validation on Turtlebot3 and Holybro X500 V2, integrating LiDAR and RGB-D sensor fusion to achieve real-time 3D occupancy grid mapping in unknown environments.</li>
-
                 </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://docs.google.com/presentation/d/1gRODXqC_rrwvQK2ZrDxCGaWJm8wEcqaM/edit?usp=drive_link&ouid=116172654146261929009&rtpof=true&sd=true" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-
-                </div>
+              </details>
+              <div class="project-links">
+                <a class="project-btn" href="https://docs.google.com/presentation/d/1gRODXqC_rrwvQK2ZrDxCGaWJm8wEcqaM/edit?usp=drive_link&ouid=116172654146261929009&rtpof=true&sd=true" target="_blank" rel="noopener"><i class="fa fa-external-link"></i>Slides</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- 1. Django Project -->
-          <!-- <div class="col s12 m6 l6">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="django web app" src="/assets/img/project-library-logo.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Local Library Web-App<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A web-app that creates an online catalog for a small local library, where users can browse available books and manage their accounts.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> HTML, CSS, Bootstrap, SQLite, Django, Heroku</li>
-                  <li>Users can view list and detail information for books and authors.</li>
-                  <li>Admin users can create and manage models.</li>
-                  <li>Librarians can renew reserved books.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://django-local-lib.herokuapp.com" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/varadbhogayata/django-local-library"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
+          <!-- 04. GPR Mine Detection -->
+          <article class="project-row">
+            <div class="project-media project-media--contain">
+              <img alt="GPRMax FDTD simulation of electromagnetic waves around a buried target" src="/assets/img/dep.jpg" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <span class="project-number">04</span>
+              <h4 class="project-title">Subsurface Mine Detection &amp; GPR Signal Processing</h4>
+              <p class="project-subtitle">Synthetic radar data and computer vision for automated subsurface target recognition</p>
+              <p class="project-meta">B.Tech Development Engineering Project &middot; IIT Ropar</p>
+              <p class="project-summary">
+                Generated a synthetic ground-penetrating radar dataset in GPRMax (FDTD), simulating 5,000+ A-scan and B-scan
+                profiles across heterogeneous soil properties, subsurface clutter, and burial depths. An OpenCV pipeline (Otsu
+                thresholding, Hough Transform) and a fine-tuned YOLOv5 model performed automated target recognition,
+                significantly improving classification mAP over traditional signal-processing baselines.
+              </p>
+              <ul class="project-tags">
+                <li>Computer Vision</li>
+                <li>GPRMax / FDTD</li>
+                <li>OpenCV</li>
+                <li>YOLOv5</li>
+                <li>Signal Processing</li>
+              </ul>
+              <div class="project-links">
+                <a class="project-btn" href="https://drive.google.com/file/d/1VdlCA65BNd95iJcCyQ83FO5BFJPIJrXE/view?usp=drive_link" target="_blank" rel="noopener"><i class="fa fa-external-link"></i>View Online</a>
               </div>
             </div>
-          </div> -->
+          </article>
 
-          <!-- Flask Project -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of web app" src="/assets/img/dep.jpg"
-                style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Subsurface Mine Detection & GPR Signal Processing<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  BTech Development Engineering Project
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>Engineered a synthetic GPR dataset by modeling heterogeneous soil dielectric properties using GPRMax (FDTD-based); simulated 5,000+ A-scan and B-scan profiles to replicate diverse subsurface clutter and variable target burial depths.
-</li>
-                  <li>Architected a computer vision pipeline in OpenCV (Otsu thresholding, Hough Transform) and fine-tuned YOLOv5 for Automated Target Recognition, significantly improving classification mAP over traditional signal processing baselines.
-</li>
-                  
-
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit Blog website" href="https://drive.google.com/file/d/1VdlCA65BNd95iJcCyQ83FO5BFJPIJrXE/view?usp=drive_link" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-
-                </div>
+          <!-- 05. Quadcopter Fault Tolerant Control -->
+          <article class="project-row">
+            <div class="project-media project-media--contain">
+              <img alt="Quadcopter free-body diagram with rotor forces and body frame" src="/assets/img/ideaforge.png" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <span class="project-number">05</span>
+              <h4 class="project-title">Quadcopter Fault-Tolerant Control</h4>
+              <p class="project-subtitle">Stable position and altitude hold through single-motor failure</p>
+              <p class="project-meta">Industry&ndash;Academia Collaboration &middot; ideaForge</p>
+              <p class="project-summary">
+                Designed a fault-tolerant control system that keeps a quadcopter's position and altitude stable after a single
+                motor failure, using control reallocation and nonlinear control strategies. Implemented and tested in simulation
+                with PX4 Autopilot, demonstrating resilience and stability under failure conditions.
+              </p>
+              <ul class="project-tags">
+                <li>Flight Control</li>
+                <li>Nonlinear Control</li>
+                <li>Control Allocation</li>
+                <li>PX4 Autopilot</li>
+                <li>Simulation</li>
+              </ul>
+              <div class="project-links">
+                <a class="project-btn" href="https://drive.google.com/file/d/18xd0Tei379g2Qq70mKEDbouQMm4FxfsG/view?usp=drive_link" target="_blank" rel="noopener"><i class="fa fa-external-link"></i>View Online</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- VQA -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/assets/img/ideaforge.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Quadcopter Fault Tolerant Control<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Industry–Academia Collaboration Project | ideaForge
-
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>Designed a fault-tolerant control system for quadcopters to handle single motor failure, maintaining stable position and altitude through control reallocation and nonlinear control strategies.</li>
-                  <li>Implemented and tested the system using PX4 Autopilot in simulation, demonstrating resilience and stability under failure conditions.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit Blog website" href="https://drive.google.com/file/d/18xd0Tei379g2Qq70mKEDbouQMm4FxfsG/view?usp=drive_link" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                </div>
+          <!-- 06. TurtleBot3 SLAM -->
+          <article class="project-row">
+            <div class="project-media project-media--focus-bottom">
+              <img alt="TurtleBot3 Burger with LiDAR between obstacles" src="/assets/img/turtlebot.png" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <span class="project-number">06</span>
+              <h4 class="project-title">TurtleBot3 Burger: SLAM and Autonomous Navigation</h4>
+              <p class="project-subtitle">LiDAR-based mapping, localization, and Nav2 navigation in ROS2 Humble</p>
+              <p class="project-meta">Modular and Intelligent Robotics Lab</p>
+              <p class="project-summary">
+                Implemented LiDAR-based SLAM and autonomous navigation for a TurtleBot3 Burger in ROS2 Humble. Tuned the
+                Nav2 stack (costmaps, planners, and controllers) for stable obstacle avoidance and goal tracking, and
+                evaluated localization accuracy and robustness in Gazebo across structured and semi-structured environments.
+              </p>
+              <ul class="project-tags">
+                <li>Mobile Robotics</li>
+                <li>ROS2 Humble</li>
+                <li>LiDAR SLAM</li>
+                <li>Nav2</li>
+                <li>Gazebo</li>
+              </ul>
+              <div class="project-links">
+                <a class="project-btn" href="https://github.com/ShubhaTanaya/my_bot" target="_blank" rel="noopener"><i class="fa fa-github"></i>GitHub</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Video Summarizer -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/assets/img/turtlebot.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">TurtleBot3 Burger: SLAM and Autonomous Navigation<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Modular and Intelligent Robotics Lab
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title brown-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>Implemented SLAM and autonomous navigation for TurtleBot3 Burger using ROS2 Humble, integrating LiDAR-based mapping and localization.</li>
-                  <li>Configured and tuned the Nav2 navigation stack, including costmaps, planners, and controllers, to achieve stable obstacle avoidance and goal tracking.
-</li>
-                  <li>Validated performance through Gazebo simulation, analyzing localization accuracy and navigation robustness in structured and semi-structured environments.
-</li>
-
-                </ul>
-                <!-- TODO: UPLOAD THIS PROJECT ON GITHUB -->
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/ShubhaTanaya/my_bot"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
+          <!-- 07. 8-DOF Robotic Arm -->
+          <article class="project-row">
+            <div class="project-media project-media--contain">
+              <img alt="Kinematic diagram of an 8-DOF anthropomorphic robotic arm" src="/assets/img/robotic_arm.png" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <span class="project-number">07</span>
+              <h4 class="project-title">Path Planning of an 8-DOF Anthropomorphic Robotic Arm</h4>
+              <p class="project-subtitle">DH kinematic modeling and smooth joint-space trajectory planning</p>
+              <p class="project-meta">Robot Manipulators: Kinematics, Dynamics, and Control</p>
+              <p class="project-summary">
+                Derived Denavit&ndash;Hartenberg parameters and implemented forward kinematics for an 8-DOF anthropomorphic
+                manipulator. Formulated cubic polynomial joint-space trajectories with smooth position, velocity, and
+                acceleration profiles, validated through MATLAB simulation.
+              </p>
+              <ul class="project-tags">
+                <li>Manipulation</li>
+                <li>Forward Kinematics</li>
+                <li>DH Parameters</li>
+                <li>Trajectory Planning</li>
+                <li>MATLAB</li>
+              </ul>
+              <div class="project-links">
+                <a class="project-btn" href="https://docs.google.com/presentation/d/1z-GQWNNueSzo0UEa-5vmGxwool-MQCre/edit?usp=drive_link&ouid=116172654146261929009&rtpof=true&sd=true" target="_blank" rel="noopener"><i class="fa fa-external-link"></i>Slides</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Image Generator -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/assets/img/robotic_arm.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Path Planning of 8-DOF Anthropomorphic Robotic Arm
-<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Robot Manipulators: Kinematics, Dynamics, and Control 
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title brown-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>Developed a complete kinematic model by deriving Denavit–Hartenberg (DH) parameters and implementing forward kinematics for an 8-DOF anthropomorphic manipulator.</li>
-                  <li>Formulated and implemented cubic polynomial joint-space trajectory planning, ensuring smooth position, velocity, and acceleration profiles, and validated results through MATLAB-based simulation.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit Blog website" href="https://docs.google.com/presentation/d/1z-GQWNNueSzo0UEa-5vmGxwool-MQCre/edit?usp=drive_link&ouid=116172654146261929009&rtpof=true&sd=true" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Head Counting System -->
-          <!-- <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/assets/img/Blog-Images-Forget-Machine-Learning-Humans-Still-Have-a-Lot-to-Learn-Part-II.jpg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Head Counting System<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A system that calculates the attendance of the class from a panoramic image of a live classroom.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <!-- <span class="card-title brown-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>Used Singular Value Decomposition for image compression; applied various image processing
-                    techniques and morphological operations to
-                    detect the number of heads.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project"
-                    href="https://github.com/varadbhogayata/visual-question-answering" target="_blank"
-                    data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> --> 
-
-          <!-- ************* -->
         </div>
       </div>
     </section>
