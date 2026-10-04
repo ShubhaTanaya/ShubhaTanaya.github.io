@@ -15,7 +15,7 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Shubha Tanaya | Perception &amp; State Estimation" />
-  <meta property="og:description" content="Robotics engineer focused on perception, state estimation, and SLAM. MRSD at Carnegie Mellon University." />
+  <meta property="og:description" content="Robotics engineer focused on perception, State estimation, and SLAM. MRSD at Carnegie Mellon University." />
   <meta property="og:url" content="https://shubhatanaya.github.io/" />
   <meta property="og:site_name" content="Shubha Tanaya" />
   <meta property="og:image" content="https://shubhatanaya.github.io/assets/img/passport-new.jpeg" />
@@ -87,8 +87,9 @@
           <h1>Shubha Tanaya</h1>
           <p class="tagline">Perception, state estimation &amp; SLAM.</p>
           <p class="lede">
-            I build localization and perception systems that keep robots on track when GPS, LiDAR, or cameras
-            can't be trusted, from dust-filled underground mines to GPS-denied aerial inspection.
+            I build state estimation and perception systems for field robotics, where they matter most:
+            degraded environments where GPS drops out, dust blinds LiDAR, and cameras lose track. My work
+            spans underground mining, aerial inspection, and autonomous racing.
           </p>
           <ul class="focus-chips" aria-label="Focus areas">
             <li>State Estimation</li>
@@ -164,6 +165,8 @@
       and always stack image-first on mobile. To add a project, copy one article.
       Media modifiers: .project-media--contain (diagrams / small images, no cropping)
                        .project-media--stats   (no image yet: key numbers panel)
+      Videos: <video data-autoplay muted loop playsinline preload="none" poster="..."> plays only
+      while on screen (see script at the bottom). Keep web copies small: /assets/video/.
     -->
     <section id="projects" class="section">
       <div class="wrap">
@@ -172,12 +175,11 @@
 
           <!-- 01. Flying Hand -->
           <article class="project-row">
-            <!-- TODO: replace this stats panel with a real Flying Hand photo/video, e.g.
-                 <div class="project-media"><img src="/assets/img/flying_hand.jpg" alt="..." /></div> -->
-            <div class="project-media project-media--stats">
-              <div class="stat"><b>&lt;1%</b><span>position error vs. RTK-GNSS over 25 m</span></div>
-              <div class="stat"><b>2.5 m</b><span>stable visual-servoing standoff</span></div>
-              <div class="stat"><b>&lt;0.15 m</b><span>contact error</span></div>
+            <div class="project-media">
+              <video data-autoplay muted loop playsinline preload="none" poster="/assets/video/flyinghand.jpg"
+                aria-label="Flying Hand aerial manipulator flight test">
+                <source src="/assets/video/flyinghand.mp4" type="video/mp4" />
+              </video>
             </div>
             <div class="project-info">
               <span class="project-number">01</span>
@@ -212,11 +214,11 @@
 
           <!-- 02. Monocular Visual SLAM Robustness Study -->
           <article class="project-row">
-            <!-- TODO: replace with a results plot (e.g. success rate vs. severity) or trajectory figure -->
-            <div class="project-media project-media--stats">
-              <div class="stat"><b>1,760</b><span>controlled ORB-SLAM3 trials</span></div>
-              <div class="stat"><b>22</b><span>EuRoC / KITTI sequences</span></div>
-              <div class="stat"><b>3 &times; 5</b><span>corruption types &times; severity levels</span></div>
+            <div class="project-media">
+              <video data-autoplay muted loop playsinline preload="none" poster="/assets/video/orbslam.jpg"
+                aria-label="ORB-SLAM3 map and tracked features">
+                <source src="/assets/video/orbslam.mp4" type="video/mp4" />
+              </video>
             </div>
             <div class="project-info">
               <span class="project-number">02</span>
@@ -276,13 +278,52 @@
             </div>
           </article>
 
-          <!-- 04. UGV-UAV Collaboration -->
+          <!-- 04. Autonomous Mushroom Harvesting -->
+          <article class="project-row">
+            <div class="project-media">
+              <video data-autoplay muted loop playsinline preload="none" poster="/assets/video/mushroom.jpg"
+                aria-label="Franka arm harvesting from a vertical rack">
+                <source src="/assets/video/mushroom.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="project-info">
+              <span class="project-number">04</span>
+              <h3 class="project-title">Autonomous Mushroom Harvesting</h3>
+              <p class="project-subtitle">Grasp, twist, and pull: sim-to-real harvesting of oyster mushrooms on a Franka arm</p>
+              <p class="project-meta">Robotic Manipulation &middot; MuJoCo &amp; Franka Hardware</p>
+              <p class="project-summary">
+                Specialty mushrooms are labor-intensive to harvest and easily damaged. This project frames harvesting
+                oyster mushrooms from vertical indoor racks as a sequence of constrained manipulation actions (lateral
+                grasp, twist to detach, and transfer) and runs one planning and execution pipeline consistently in MuJoCo
+                and on a physical Franka arm. The real robot successfully harvested five mushrooms from a vertical rack setup.
+              </p>
+              <ul class="project-tags">
+                <li>Manipulation</li>
+                <li>Motion Planning</li>
+                <li>Sim-to-Real</li>
+                <li>MuJoCo</li>
+                <li>Franka</li>
+                <li>Agricultural Robotics</li>
+              </ul>
+              <details class="project-details">
+                <summary>Read more</summary>
+                <ul>
+                  <li>Formulated harvesting as constrained manipulation: lateral grasping, twisting for detachment, and transfer.</li>
+                  <li>Built a planning and execution pipeline that behaves consistently in MuJoCo simulation and on the physical Franka manipulator, accounting for grasp orientation, reachability, and hardware safety constraints.</li>
+                  <li>Used a parameterized twist-and-pull strategy to bridge sim-to-real differences in detachment.</li>
+                  <li>Validated on a vertical rack setup with five successful real-robot harvests, indicating the feasibility of quality-preserving robotic harvesting in constrained farm settings.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <!-- 05. UGV-UAV Collaboration -->
           <article class="project-row">
             <div class="project-media project-media--contain">
               <img alt="Gazebo simulation of a UAV tracking a ground robot" src="/assets/img/btp.jpg" loading="lazy" />
             </div>
             <div class="project-info">
-              <span class="project-number">04</span>
+              <span class="project-number">05</span>
               <h3 class="project-title">UGV-UAV Collaboration for Exploratory Mapping</h3>
               <p class="project-subtitle">Multi-robot autonomous system for exploratory mapping and navigation</p>
               <p class="project-meta">B.Tech Capstone &middot; Modular and Intelligent Robotics Lab, IIT Ropar &middot; Dr. Ekta Singla &middot; Aug 2024 &ndash; May 2025</p>
@@ -314,13 +355,13 @@
             </div>
           </article>
 
-          <!-- 05. GPR Mine Detection -->
+          <!-- 06. GPR Mine Detection -->
           <article class="project-row">
             <div class="project-media project-media--contain">
               <img alt="GPRMax FDTD simulation of electromagnetic waves around a buried target" src="/assets/img/dep.jpg" loading="lazy" />
             </div>
             <div class="project-info">
-              <span class="project-number">05</span>
+              <span class="project-number">06</span>
               <h3 class="project-title">Subsurface Target Detection &amp; GPR Signal Processing</h3>
               <p class="project-subtitle">Synthetic radar data and computer vision for automated subsurface target recognition</p>
               <p class="project-meta">B.Tech Development Engineering Project &middot; IIT Ropar</p>
@@ -343,13 +384,13 @@
             </div>
           </article>
 
-          <!-- 06. TurtleBot3 SLAM -->
+          <!-- 07. TurtleBot3 SLAM -->
           <article class="project-row">
             <div class="project-media project-media--focus-bottom">
               <img alt="TurtleBot3 Burger with LiDAR between obstacles" src="/assets/img/turtlebot.png" loading="lazy" />
             </div>
             <div class="project-info">
-              <span class="project-number">06</span>
+              <span class="project-number">07</span>
               <h3 class="project-title">TurtleBot3 Burger: SLAM and Autonomous Navigation</h3>
               <p class="project-subtitle">LiDAR-based mapping, localization, and Nav2 navigation in ROS2 Humble</p>
               <p class="project-meta">Modular and Intelligent Robotics Lab, IIT Ropar</p>
@@ -371,13 +412,13 @@
             </div>
           </article>
 
-          <!-- 07. Quadcopter Fault Tolerant Control -->
+          <!-- 08. Quadcopter Fault Tolerant Control -->
           <article class="project-row">
             <div class="project-media project-media--contain">
               <img alt="Quadcopter free-body diagram with rotor forces and body frame" src="/assets/img/ideaforge.png" loading="lazy" />
             </div>
             <div class="project-info">
-              <span class="project-number">07</span>
+              <span class="project-number">08</span>
               <h3 class="project-title">Quadcopter Fault-Tolerant Control</h3>
               <p class="project-subtitle">Stable position and altitude hold through single-motor failure</p>
               <p class="project-meta">Industry&ndash;Academia Collaboration &middot; ideaForge</p>
@@ -398,13 +439,13 @@
             </div>
           </article>
 
-          <!-- 08. 8-DOF Robotic Arm -->
+          <!-- 09. 8-DOF Robotic Arm -->
           <article class="project-row">
             <div class="project-media project-media--contain">
               <img alt="Kinematic diagram of an 8-DOF anthropomorphic robotic arm" src="/assets/img/robotic_arm.png" loading="lazy" />
             </div>
             <div class="project-info">
-              <span class="project-number">08</span>
+              <span class="project-number">09</span>
               <h3 class="project-title">Path Planning of an 8-DOF Anthropomorphic Robotic Arm</h3>
               <p class="project-subtitle">DH kinematic modeling and smooth joint-space trajectory planning</p>
               <p class="project-meta">Robot Manipulators: Kinematics, Dynamics, and Control</p>
@@ -640,6 +681,27 @@
           });
         }, { rootMargin: '-45% 0px -50% 0px' });
         document.querySelectorAll('main section[id]').forEach(function (s) { io.observe(s); });
+      }
+
+      // Project videos: load and play only while on screen; respect reduced motion
+      var vids = document.querySelectorAll('video[data-autoplay]');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) {
+        vids.forEach(function (v) { v.controls = true; });
+      } else {
+        var vio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            var v = en.target;
+            if (en.isIntersecting) {
+              if (v.preload === 'none') v.preload = 'auto';
+              var p = v.play();
+              if (p && p.catch) p.catch(function () { v.controls = true; });
+            } else {
+              v.pause();
+            }
+          });
+        }, { threshold: 0.25 });
+        vids.forEach(function (v) { vio.observe(v); });
       }
 
       var y = document.querySelector('[data-year]');
