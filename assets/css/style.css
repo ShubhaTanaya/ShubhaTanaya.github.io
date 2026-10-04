@@ -225,7 +225,7 @@ strong { font-weight: 600; color: var(--ink); }
 
 .portrait { margin: 0; justify-self: end; width: 100%; max-width: 340px; }
 .portrait img {
-  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 56% 30%;
+  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 48% 30%;
   border-radius: var(--radius); border: 1px solid var(--rule);
   box-shadow: var(--shadow);
 }
@@ -500,7 +500,7 @@ strong { font-weight: 600; color: var(--ink); }
   body { font-size: 16px; }
   .hero-grid { grid-template-columns: 1fr; }
   .portrait { order: -1; justify-self: start; max-width: 180px; }
-  .portrait img { aspect-ratio: 1 / 1; border-radius: 50%; }
+  .portrait img { aspect-ratio: 1 / 1; border-radius: 50%; object-position: 47% 15%; }
   .lede { font-size: 17px; }
 
   .project-row { grid-template-columns: 1fr; gap: 24px; }
